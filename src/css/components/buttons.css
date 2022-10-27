@@ -1,0 +1,49 @@
+.blackjack__buttons{
+    --ml:0.125rem;
+    --mr:0.125rem;
+    --shadow: rgba(255, 255, 255, 0.1) 0 4px 6px;
+    padding: 0.25rem;
+    border-color:transparent;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    margin-left: var(--ml);
+    margin-right: var(--mr);
+    transform: translateY(-10%);
+    box-shadow: var(--shadow);
+    transition:all 0.1s ease-in-out;
+    &:first-of-type{
+        --ml:0;
+    }
+    &:last-of-type{
+        --mr:0;
+    }
+    &:hover{
+        --shadow: rgba(255, 255, 255, 0.1) 4px 4px 8px;
+    }
+    &:active{
+        --shadow: none;
+        transform: translateY(0%);
+    }
+    &:not(.blackjack__buttons--new-game ){
+        --opacity:100%;
+        background-color: rgba(0, 67 , 106 ,var(--opacity));
+        color: rgba(255,255,255,var(--opacity));
+        &:disabled{
+            --opacity:50%;
+            --shadow: none;
+            transform: translateY(0%);
+        }
+    }
+    &-container{
+        margin: 0 auto;
+        display: block;
+        width: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: clamp(0.75rem, 0.7037rem + 0.2058vw, 1rem);
+    }
+    &--new-game{
+        background-color: rgb(116, 0, 0);
+        color: rgba(255,255,255,1);
+    }
+}
