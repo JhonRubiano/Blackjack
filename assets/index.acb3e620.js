@@ -15,3 +15,4 @@
     </p>
   </div>
 `;l(document.querySelector("#counter"));
+//# sourceMappingURL=index.acb3e620.js.map
