@@ -1,6 +1,16 @@
 import { defineConfig } from "vite";
+import postcssNested from 'postcss-nested'
 
 export default defineConfig({
-    base:'/Blackjack/'
-
+    css:{
+        postcss:{
+            plugins:[
+                postcssNested
+            ]
+        },
+    },
+    base:'/Blackjack/',
+    build:{
+        sourcemap: true,
+    }
 })
