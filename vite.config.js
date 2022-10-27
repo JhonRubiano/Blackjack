@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import postcssNested from 'postcss-nested'
 
 export default defineConfig({
+    root:'./src',
+    publicDir:'../public',
     css:{
         postcss:{
             plugins:[
