@@ -2,12 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <meta 
+      name="description" 
+      content="A blackjack simple game using typescript and vite."
+    >
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.ts"></script>
+    <header class="blackjack__header">
+      <h1>
+        BLACKJACK 
+      </h1>
+      <span>
+        ♦️ ♣ ♠️ ♥️
+      </span>
+    </header>
+    <main class="blackjack-board">
+      <div class="blackjack__buttons-container">     
+        <button id="newGameBtn" class="blackjack__buttons blackjack__buttons--new-game">Nuevo Juego</button>
+        <button id="hitBtn" class="blackjack__buttons" disabled="disabled">Pedir carta</button>
+        <button id="standBtn" class="blackjack__buttons" disabled="disabled">Detener</button>
+      </div>
+      <section class="player">
+        <h2> Jugador 1 - <small>0</small> </h2>
+        <div class="player__cards">
+          <img src="./deck/7H.png" alt="7h" width="6rem">
+          <img src="./deck/7S.png" alt="7S" width="6rem">
+        </div>
+      </section>
+      <section class="dealer">
+        <h2> Computadora - <small>0</small> </h2>
+        <div class="dealer__cards">
+          <img src="./deck/2H.png" alt="2h" width="6rem">
+          <img src="./deck/grey_back.png" alt="vack_grey" width="6rem">
+        </div>
+      </section>
+      <div style="width: 100%; margin-top: 3rem;" id="app"></div>
+    </main>
+    <script type="module" src="./main.ts"></script>
   </body>
 </html>

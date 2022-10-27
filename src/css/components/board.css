@@ -1,0 +1,30 @@
+.blackjack-board{
+    --board-bg-corner-img:url("../images/wood-pattern.png");
+    --board-bg-corner-base:#1f0100;
+    --board-bg-base:rgb(40,68,17);
+    --board-bg-gradient: radial-gradient(circle, rgba(40,68,17,1) 0%, rgba(23,68,12,1) 53%, rgba(8,80,31,1) 100%);
+    --border: 1.5rem;
+    --rounded:2rem;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 70vh;
+    padding:1rem;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    background: var(--board-bg-base);
+    background: var(--board-bg-gradient);
+    background-clip: padding-box;
+    border: solid var(--border) transparent;
+    border-radius: var(--rounded);
+    &:before{
+        content: '';
+        position: absolute;
+        inset:0;
+        z-index: -1;
+        margin: calc( (-1) * var(--border) / 2 ); 
+        border-radius: calc( var(--rounded) / 2 );
+        background-color: var(--board-bg-corner-base);
+        background-image: var(--board-bg-corner-img);
+    }
+}
