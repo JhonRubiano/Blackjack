@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import postcssNested from 'postcss-nested'
 
 export default defineConfig({
+    root:'src',
+    publicDir:'../public',
     css:{
         postcss:{
             plugins:[
@@ -12,6 +14,7 @@ export default defineConfig({
     base:'/Blackjack/',
     build:{
         sourcemap: true,
+        outDir:'../dist',
         rollupOptions: {
             output: {
                 assetFileNames: (assetInfo) => {
