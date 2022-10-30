@@ -5,6 +5,8 @@
     --board-bg-gradient: radial-gradient(circle, rgba(40,68,17,1) 0%, rgba(23,68,12,1) 53%, rgba(8,80,31,1) 100%);
     --border: 1.5rem;
     --rounded:2rem;
+    max-width: 64rem;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     min-height: 70vh;
