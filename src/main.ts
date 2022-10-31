@@ -1,5 +1,5 @@
 import typescriptLogo from './images/typescript.svg';
-import { createDeck, drawCard, setupCounter } from './ts';
+import { cardValue, createDeck, drawCard, setupCounter } from './ts';
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -23,3 +23,5 @@ const deck = createDeck();
 console.log(deck);
 let card = drawCard(deck);
 console.log(card);
+
+console.log(cardValue(card,0))
