@@ -7,6 +7,5 @@ export const createDeck = (): string[] => {
             deck.push(value + suit);
         }
     }
-    console.log(deck)
     return shuffleCards(deck);
 };
