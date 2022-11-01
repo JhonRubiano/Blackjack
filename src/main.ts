@@ -1,5 +1,5 @@
 import typescriptLogo from './images/typescript.svg';
-import { gameButtons, initializeGame, setupCounter } from './ts';
+import { drawCard, gameButtons, initializeGame, renderCard, setupCounter } from './ts';
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -23,3 +23,7 @@ setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 gameButtons.newGameBtn?.addEventListener('click', () => {
   initializeGame();
 })
+gameButtons.hitBtn?.addEventListener('click', () => {
+  const card: string = drawCard();
+  renderCard({ card, turn: 'player' });
+});

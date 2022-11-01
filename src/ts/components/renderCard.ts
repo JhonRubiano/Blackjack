@@ -1,5 +1,5 @@
 import { player, playerElements } from "../models";
-import { getScore } from "./score";
+import { getScore } from "../helpers";
 
 export const renderCard = ({card,turn}:{card: string, turn: player} ):void => {
     const cardImg = document.createElement('img');
