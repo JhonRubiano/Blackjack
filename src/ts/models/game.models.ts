@@ -1,3 +1,5 @@
+import { player } from "./interfaces.models";
+
 /**
  * 2C = Two of Clubs
  * 2D = Two of Diamonds
@@ -11,7 +13,10 @@ export let deck: string[] = [
                                 // 'AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H', 'JH', 'QH', 'KH',
                                 // 'AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS'
                             ],
-            playersPoints: number[] = [];
+            playersPoints: Record< player, number > = {
+                player : 0,
+                dealer : 0
+            };
 
 
 export const suits: string[] = [

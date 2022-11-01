@@ -1,6 +1,6 @@
-import { playersPoints } from "../models";
+import { player, playersPoints } from "../models";
 
-export const cardValue = (card: string, turn: number): number => {
+export const cardValue = ({card,turn}:{card: string, turn: player}): number => {
     const value: string = card.substring(0, card.length - 1);
     switch (value) {
         

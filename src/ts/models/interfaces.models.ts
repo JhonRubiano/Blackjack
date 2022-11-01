@@ -3,3 +3,12 @@ export interface GameButtons {
     standBtn: HTMLButtonElement | null,
     hitBtn: HTMLButtonElement | null
 }
+interface PlayerContainers {
+    cardsContainer: HTMLElement | null,
+    scoreContainer: HTMLElement | null
+}
+export type player = 'player' | 'dealer';
+export interface Players {
+    player: PlayerContainers,
+    dealer: PlayerContainers
+}
