@@ -1,12 +1,11 @@
 import { shuffleCards } from "../helpers";
-import { deck, suits, values } from "../models";
+import { gameVariables } from "../models";
 
 export const createDeck = (): string[] => {
-    for (let suit of suits) {
-        for (let value of values) {
-            deck.push(value + suit);
+    for (let suit of gameVariables.suits) {
+        for (let value of gameVariables.values) {
+            gameVariables.deck.push(value + suit);
         }
     }
-    console.log(deck)
-    return shuffleCards(deck);
+    return shuffleCards(gameVariables.deck);
 };

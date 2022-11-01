@@ -12,3 +12,10 @@ export interface Players {
     player: PlayerContainers,
     dealer: PlayerContainers
 }
+
+export interface GameVariables {
+    deck:string[],
+    playersPoints:Record<player,number>,
+    suits:string[],
+    values:string[]
+}

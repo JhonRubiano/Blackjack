@@ -1,5 +1,6 @@
 import typescriptLogo from './images/typescript.svg';
-import { createDeck, drawCard, getScore, renderCard, setupCounter } from './ts';
+import { drawCard, gameButtons, gameVariables, initializeGame, renderCard, setupCounter } from './ts';
+import { dealerTurn } from './ts/components/dealerTurn';
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -19,28 +20,25 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-const deck = createDeck();
-console.log(deck);
-let card = drawCard(deck);
-renderCard({
-  card,
-  turn:'player'
-})
-console.log(card);
 
-console.log({playerScore:getScore({
-                      card,
-                      turn:'player'
-                    })}
-            )
-
-card = drawCard(deck)
-renderCard({
-  card,
-  turn: 'dealer'
+gameButtons.newGameBtn?.addEventListener('click', () => {
+  initializeGame();
 })
-console.log({dealerScore:getScore({
-  card,
-  turn: 'dealer'
-})}
-)
+gameButtons.hitBtn?.addEventListener('click', () => {
+  const card: string = drawCard();
+  renderCard({ card, turn: 'player' });
+  if(gameVariables.playersPoints.player > 21){
+    gameButtons.hitBtn!.disabled =true;
+    gameButtons.standBtn!.disabled = true;
+    dealerTurn(gameVariables.playersPoints.player);
+  }else if (gameVariables.playersPoints.player === 21){
+    gameButtons.hitBtn!.disabled = true;
+    gameButtons.standBtn!.disabled = true;
+    dealerTurn(gameVariables.playersPoints.player);
+  }
+});
+gameButtons.standBtn?.addEventListener('click', () => {
+  gameButtons.hitBtn!.disabled = true;
+  gameButtons.standBtn!.disabled = true;
+  dealerTurn(gameVariables.playersPoints.player);
+});
