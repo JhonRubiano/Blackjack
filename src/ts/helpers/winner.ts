@@ -13,5 +13,5 @@ export const winner = () =>{
             alert('Dealer wins')
         }
         
-    }, 100 );
+    }, 1000 );
 }
